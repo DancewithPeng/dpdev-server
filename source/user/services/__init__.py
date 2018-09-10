@@ -7,4 +7,7 @@ def init_app(app: Flask) :
     api = Api(app)
 
     from .root import Root
+    from .signup import Signup
+
     api.add_resource(Root, '/')
+    api.add_resource(Signup, '/signup/')
