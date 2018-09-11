@@ -6,8 +6,8 @@ def init_app(app: Flask) :
 
     api = Api(app)
 
-    from .root import Root
-    from .signup import Signup
+    from .signup import Signup    
+    from .password_auth import PasswordAuth
 
-    api.add_resource(Root, '/')
     api.add_resource(Signup, '/signup/')
+    api.add_resource(PasswordAuth, '/auth/password/')

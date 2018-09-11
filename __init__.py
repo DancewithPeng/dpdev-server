@@ -27,8 +27,6 @@ def create_app(config=None) :
 
     # 业务模块
 
-    print('ahahha')
-
     from .source import user    
     user.init_app(app)
     #access.init_app(app)
