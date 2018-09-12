@@ -9,7 +9,11 @@ def init_app(app: Flask) :
     @api.representation('application/json')
     def output_json(data, code, headers=None):
         resp = make_response(json.dumps(data), code)        
-        new_headers = {'Access-Control-Allow-Origin': '*'}
+
+        new_headers = {'Access-Control-Allow-Origin': '*',
+                       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+                       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS'}
+                       
         new_headers.update(headers or {})
         resp.headers.extend(new_headers)
         return resp
