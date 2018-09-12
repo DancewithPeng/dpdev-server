@@ -11,8 +11,8 @@ def init_app(app: Flask) :
         resp = make_response(json.dumps(data), code)        
 
         new_headers = {'Access-Control-Allow-Origin': '*',
-                       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-                       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS'}
+                       'Access-Control-Allow-Headers': '*',
+                       'Access-Control-Allow-Methods': '*'}
                        
         new_headers.update(headers or {})
         resp.headers.extend(new_headers)
