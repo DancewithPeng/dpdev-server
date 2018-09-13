@@ -6,6 +6,7 @@ def init_app(app: Flask) :
 
     api = Api(app)
 
+    # 响应装饰器
     @api.representation('application/json')
     def output_json(data, code, headers=None):
         resp = make_response(json.dumps(data), code)        

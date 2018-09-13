@@ -42,7 +42,7 @@ class PasswordAuth(Resource) :
 
             try :
                 # 先把原本的token置为失效
-                old_tokens = Token.query.filter_by(userid=user.id).all()
+                old_tokens = Token.query.filter_by(userid=user.id, isactive=True).all()
 
                 for old_token in old_tokens :
                     old_token.isactive = False
