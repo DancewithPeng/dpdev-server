@@ -26,11 +26,11 @@ def create_app(config=None) :
             app.config.from_pyfile(config)
 
     # 业务模块
-
     from .source import user    
+    from .source import authorization
     user.init_app(app)
-    #access.init_app(app)
-    #interactive.init_app(app)    
+    authorization.init_app(app)
+
     return app
 
 # gunicorn 启动需要创建对应的实例
